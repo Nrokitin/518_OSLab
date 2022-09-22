@@ -1,0 +1,34 @@
+1.6 3 และ 7
+2.
+Q1:
+	processing_row = tRow;
+       	processing_col = tCol;
+        	datA = a;
+        	datB = b;
+        	datC = c;
+Q2:
+	public
+Q3:
+	int total = 0;
+       	for(int i = 0; i < datA.data[0].length; i++){
+            		total += (datA.data[processing_row][i]*datB.data[i][processing_col]);
+        	}    
+        	datC.data[processing_row][processing_col] = total;   
+Q4:
+	Thread[] t = new Thread[matC_r*matC_c];
+        	int tIdx = 0;
+        	for (int r = 0; r < matC.data.length; r++) {
+            		for (int c = 0; c < matC.data[0].length; c++) {
+               		t[tIdx] = new Thread(new MatrixMulThread(r, c, matA, matB, matC));
+               		t[tIdx].start();
+               		tIdx++;
+            		}
+        	}
+Q5: 	
+	try{
+           		for(Thread thread : t){
+                		thread.join();
+            		}
+        	}catch(Exception e){
+           		System.out.println(e);
+        	}        
