@@ -1,0 +1,11 @@
+1
+1.1 exitCriticalSection(0);
+1.2 enterCriticalSection(0);
+
+2.
+2.1 sem_wait(&mySemaphore);
+2.2 sem_init(&mySemaphore,0,1);
+2.3
+	thr 140577628796672 exits. =  lastSeen = 183172
+	Last cnt from tid[0] is 183172
+	final cnt = 200000
